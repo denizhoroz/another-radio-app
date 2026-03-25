@@ -49,6 +49,7 @@ body {
   width: 420px;
   height: 240px;
   z-index: 0;
+  pointer-events: none;
 }
 
 #btn {

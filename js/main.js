@@ -34,10 +34,13 @@ startFlicker();
 
 btn.addEventListener('click', () => {
   if (stream.paused) {
-    stream.play();
-    btn.textContent = 'STOP';
-    btn.classList.add('playing');
-    stopFlicker();
+    stream.play().then(() => {
+      btn.textContent = 'STOP';
+      btn.classList.add('playing');
+      stopFlicker();
+    }).catch(() => {
+      stream.load();
+    });
   } else {
     stream.pause();
     stream.load();

@@ -38,7 +38,8 @@ btn.addEventListener('click', () => {
       btn.textContent = 'STOP';
       btn.classList.add('playing');
       stopFlicker();
-    }).catch(() => {
+    }).catch((err) => {
+      console.error('Playback failed:', err);
       stream.load();
     });
   } else {

@@ -1,5 +1,11 @@
 const btn = document.getElementById('btn');
 const stream = document.getElementById('stream');
+const volume = document.getElementById('volume');
+
+stream.volume = volume.value;
+volume.addEventListener('input', () => {
+  stream.volume = volume.value;
+});
 
 let flickerInterval = null;
 
@@ -34,12 +40,21 @@ startFlicker();
 
 btn.addEventListener('click', () => {
   if (stream.paused) {
+    btn.textContent = 'LOWERING...';
+    btn.classList.add('connecting');
+    btn.disabled = true;
     stream.play().then(() => {
       btn.textContent = 'STOP';
+      btn.classList.remove('connecting');
       btn.classList.add('playing');
+      btn.disabled = false;
+      document.body.style.background = '#284d28';
       stopFlicker();
     }).catch((err) => {
       console.error('Playback failed:', err);
+      btn.textContent = 'LOWER CORTISOL';
+      btn.classList.remove('connecting');
+      btn.disabled = false;
       stream.load();
     });
   } else {
@@ -47,6 +62,7 @@ btn.addEventListener('click', () => {
     stream.load();
     btn.textContent = 'LOWER CORTISOL';
     btn.classList.remove('playing');
+    document.body.style.background = '#4d2828';
     startFlicker();
   }
 });

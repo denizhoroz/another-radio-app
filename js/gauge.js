@@ -53,7 +53,7 @@
       y: pos.y.toFixed(1),
       'text-anchor': 'middle',
       'dominant-baseline': 'middle',
-      fill: '#888',
+      fill: '#bbb',
       'font-size': '20',
       'font-weight': 'bold',
       'font-family': 'sans-serif',

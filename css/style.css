@@ -9,13 +9,14 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #111;
+  background: #4d2828;
+  transition: background 1.5s ease;
 }
 
 #container {
   position: relative;
   width: 420px;
-  height: 380px;
+  height: 445px;
 }
 
 #subtitle {
@@ -23,7 +24,7 @@ body {
   top: -8px;
   width: 100%;
   text-align: center;
-  color: #444;
+  color: #888;
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -88,8 +89,48 @@ body {
   box-shadow: 0 0 60px rgba(255, 255, 255, 0.15);
 }
 
+#btn.connecting {
+  background: #5a5a2a;
+  color: #fff;
+  cursor: wait;
+}
+
 #btn.playing:hover {
   background: #222;
   color: #fff;
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+#volume {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 420px;
+  width: 140px;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #666;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+#volume::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
 }

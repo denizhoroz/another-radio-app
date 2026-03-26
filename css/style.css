@@ -134,3 +134,23 @@ body {
   border: none;
   cursor: pointer;
 }
+
+#footer {
+  position: fixed;
+  bottom: 16px;
+  width: 100%;
+  text-align: center;
+  color: #555;
+  font-size: 0.75rem;
+  font-family: sans-serif;
+  letter-spacing: 0.05em;
+}
+
+#footer a {
+  color: #777;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  color: #fff;
+}
